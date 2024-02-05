@@ -72,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 installations
 npm i react-router-dom
 npm install @mui/material @emotion/react @emotion/styled @mui/styled-engine-sc styled-components @mui/icons-material
+npm install gh-pages --save-dev
