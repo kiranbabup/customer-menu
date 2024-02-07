@@ -1,9 +1,7 @@
 import { Box, Button, Typography, styled } from "@mui/material";
 import RKLogo from "../assets/images/logo.png"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-const HeaderComponent = ({ isButtonDisplay, setButtonDisplay }) => {
-    const { id } = useParams();
+const HeaderComponent = ({ isButtonDisplay, setButtonDisplay, id }) => {
     const HeaderBox = styled(Box)({
         width: "100%",
         height: "50px",

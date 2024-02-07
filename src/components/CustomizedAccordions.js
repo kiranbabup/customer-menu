@@ -37,11 +37,7 @@ const AccordionSummary = styled((props) => (
     borderBottom: expanded ? '1px dashed #ffffff4f' : 'none',
 }));
 
-export default function CustomizedAccordions({setButtonDisplay}) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const foodListParam = urlParams.get('foodList');
-    const foodList = JSON.parse(decodeURIComponent(foodListParam));
-
+export default function CustomizedAccordions({setButtonDisplay, foodList}) {
     const [expanded, setExpanded] = React.useState('panel1');
     const [addedItems, setAddedItems] = React.useState([]);
 
