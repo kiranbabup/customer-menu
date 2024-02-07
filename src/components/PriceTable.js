@@ -28,45 +28,45 @@ export default function PriceTable({ addedItems }) {
     const invoiceTaxes = TAX_RATE * invoiceSubtotal;
     const invoiceTotal = invoiceTaxes + invoiceSubtotal;
     return (
-        <TableContainer component={Paper} sx={{mt:1}}>
-            <Table sx={{ minWidth: "272px" }} aria-label="spanning table">
+        <TableContainer component={Paper} sx={{mt:1, backgroundColor:"transparent", border:"1px solid #ffffffa6"}}>
+            <Table sx={{ minWidth: "272px", }} aria-label="spanning table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align="center" colSpan={3}>
+                        <TableCell sx={{color:'white'}} align="center" colSpan={3}>
                             Details
                         </TableCell>
-                        <TableCell align="right">Price</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">Price</TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell align="right">Qty.</TableCell>
-                        <TableCell align="right">Unit</TableCell>
-                        <TableCell align="right">Sum</TableCell>
+                        <TableCell sx={{color:'white'}} >Name</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">Qty.</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">Unit</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">Sum</TableCell>
                     </TableRow>
                 </TableHead>
 
                 <TableBody>
                     {rows.map((row) => (
                         <TableRow key={row.desc}>
-                            <TableCell>{row.desc}</TableCell>
-                            <TableCell align="right">{row.qty}</TableCell>
-                            <TableCell align="right">{row.unit}</TableCell>
-                            <TableCell align="right">{ccyFormat(row.price)}</TableCell>
+                            <TableCell sx={{color:'white'}} >{row.desc}</TableCell>
+                            <TableCell sx={{color:'white'}} align="right">{row.qty}</TableCell>
+                            <TableCell sx={{color:'white'}} align="right">{row.unit}</TableCell>
+                            <TableCell sx={{color:'white'}} align="right">{ccyFormat(row.price)}</TableCell>
                         </TableRow>
                     ))}
                     <TableRow>
-                        <TableCell rowSpan={3} />
-                        <TableCell colSpan={2}>Subtotal</TableCell>
-                        <TableCell align="right">{ccyFormat(invoiceSubtotal)}</TableCell>
+                        <TableCell sx={{color:'white'}} rowSpan={3} />
+                        <TableCell sx={{color:'white'}} colSpan={2}>Subtotal</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">{ccyFormat(invoiceSubtotal)}</TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell>Tax</TableCell>
-                        <TableCell align="right">{`${(TAX_RATE * 100).toFixed(0)} %`}</TableCell>
-                        <TableCell align="right">{ccyFormat(invoiceTaxes)}</TableCell>
+                        <TableCell sx={{color:'white'}} >Tax</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">{`${(TAX_RATE * 100).toFixed(0)} %`}</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">{ccyFormat(invoiceTaxes)}</TableCell>
                     </TableRow>
                     <TableRow>
-                        <TableCell colSpan={2}>Total</TableCell>
-                        <TableCell align="right">{ccyFormat(invoiceTotal)}</TableCell>
+                        <TableCell sx={{color:'white'}} colSpan={2}>Total</TableCell>
+                        <TableCell sx={{color:'white'}} align="right">{ccyFormat(invoiceTotal)}</TableCell>
                     </TableRow>
                 </TableBody>
             </Table>

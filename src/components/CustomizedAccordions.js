@@ -10,29 +10,31 @@ import MenuDetails from './MenuDetails';
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-    border: `1px solid ${theme.palette.divider}`,
-    '&:not(:last-child)': {
-        borderBottom: "1px solid rgba(0, 0, 0, .125)",
-    },
+    border: `1px solid #ffffffa6`,
+    borderRadius: "5px",
+    marginBottom: "5px",
     '&::before': {
         display: 'none',
     },
+    backgroundColor: 'transparent',
 }));
 
 const AccordionSummary = styled((props) => (
     <MuiAccordionSummary
-        expandIcon={<ExpandMoreIcon sx={{ fontSize: '1.5rem' }} />}
+        expandIcon={<ExpandMoreIcon sx={{ fontSize: '1.5rem', color: "white" }} />}
         {...props}
     />
-))(({ theme }) => ({
+))(({ theme, expanded }) => ({
     backgroundColor:
         theme.palette.mode === 'dark'
             ? 'rgba(255, 255, 255, .05)'
-            : 'rgba(0, 0, 0, .03)',
+            : 'transparent',
     flexDirection: 'row',
+    color: theme.palette.common.white,
     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
         transform: 'rotate(180deg)',
     },
+    borderBottom: expanded ? '1px dashed #ffffffa6' : 'none',
 }));
 
 export default function CustomizedAccordions() {
@@ -71,14 +73,14 @@ export default function CustomizedAccordions() {
         }
     };
 
-    
+
     return (
         <Box sx={{ padding: 3 }}>
             {Array.from(new Set(foodList.map((item) => item.type))).map((type, index) => (
                 <Box key={type}>
-                    <Typography sx={{ fontWeight: "bold", pl: 2, pt: 1 }}>{type}..</Typography>
+                    <Typography sx={{ fontWeight: "bold", fontSize: "15px", pl: 2, pt: 1, textAlign: "center" }}>{type}</Typography>
                     <Accordion expanded={expanded === `panel${index + 1}`} onChange={handleChange(`panel${index + 1}`)}>
-                        <AccordionSummary aria-controls={`panel${index + 1}-veg-content`} id={`panel${index + 1}-veg-header`}>
+                        <AccordionSummary expanded={expanded === `panel${index + 1}`} aria-controls={`panel${index + 1}-veg-content`} id={`panel${index + 1}-veg-header`}>
                             <Typography>{type} - Veg ({getFilteredItemsByType(type, true).length})</Typography>
                         </AccordionSummary>
                         {getFilteredItemsByType(type, true).map((item) => (
@@ -86,7 +88,7 @@ export default function CustomizedAccordions() {
                         ))}
                     </Accordion>
                     <Accordion expanded={expanded === `panel${index + 2}-non-veg`} onChange={handleChange(`panel${index + 2}-non-veg`)}>
-                        <AccordionSummary aria-controls={`panel${index + 2}-non-veg-content`} id={`panel${index + 2}-non-veg-header`}>
+                        <AccordionSummary expanded={expanded === `panel${index + 2}-non-veg`} aria-controls={`panel${index + 2}-non-veg-content`} id={`panel${index + 2}-non-veg-header`}>
                             <Typography>{type} - Non Veg ({getFilteredItemsByType(type, false).length})</Typography>
                         </AccordionSummary>
                         {getFilteredItemsByType(type, false).map((item) => (
@@ -95,10 +97,10 @@ export default function CustomizedAccordions() {
                     </Accordion>
                 </Box>
             ))}
-           {
-            addedItems.length > 0  &&
-            <PriceTable addedItems={addedItems}/>
-           } 
+            {
+                addedItems.length > 0 &&
+                <PriceTable addedItems={addedItems} />
+            }
             {/* {
                 addedItems.map(item => {
                     return (

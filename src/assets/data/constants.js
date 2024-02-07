@@ -70,7 +70,7 @@ export const foodList = [
         name: "Paneer Soup",
         price: 100,
         type: "SOPUS",
-        imgurl: " "
+        imgurl: vsoup
     },
     {
         isveg: true,
@@ -114,4 +114,15 @@ export const foodList = [
         type: "MAIN_COURSE",
         imgurl: nvb
     },
+    // {
+    //     isveg: false,
+    //     name:"Mutton Biryani",
+    //     price: 300,
+    //     type: "MAIN_COURSE",
+    //     imgurl: nvb
+    // }
 ]
+
+export const dataColor = {
+    color: "black"
+}

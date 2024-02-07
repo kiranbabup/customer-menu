@@ -1,4 +1,4 @@
-import { Box, Button, styled } from "@mui/material";
+import { Box, Button, Typography, styled } from "@mui/material";
 import RKLogo from "../assets/images/logo.png"
 import { useState } from "react";
 const HeaderComponent = ()=>{
@@ -22,6 +22,7 @@ const HeaderComponent = ()=>{
     return(
         <HeaderBox>
             <Box component="img" sx={{ height: "80%", marginLeft: "2%" }} alt="Header Logo" src={RKLogo} />
+            <Typography sx={{border:"1px dashed #ffffffa6", padding:"4px", borderRadius:"5px"}}>Table No. 1</Typography>
             <Button disabled={isCallWaiterButton} sx={{ minWidth:"110px", height: "60%", marginRight: "4%", border:"2px solid", fontWeight:"bold" }} variant="outlined" onClick={()=>onCallWaiterHandle()}>Call Waiter</Button>
         </HeaderBox>
     )
