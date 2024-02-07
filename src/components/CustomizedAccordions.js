@@ -3,7 +3,7 @@ import { Box, Typography, styled } from '@mui/material';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import { foodList } from '../assets/data/constants';
+import { foodList } from '../assets/data/constants';
 import PriceTable from './PriceTable';
 import MenuDetails from './MenuDetails';
 
@@ -37,7 +37,7 @@ const AccordionSummary = styled((props) => (
     borderBottom: expanded ? '1px dashed #ffffff4f' : 'none',
 }));
 
-export default function CustomizedAccordions({setButtonDisplay, foodList}) {
+export default function CustomizedAccordions({setButtonDisplay}) {
     const [expanded, setExpanded] = React.useState('panel1');
     const [addedItems, setAddedItems] = React.useState([]);
 

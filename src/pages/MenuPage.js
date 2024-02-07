@@ -10,9 +10,7 @@ import { useParams } from 'react-router-dom';
 const MenuPage = () => {
     const [isButtonDisplay, setButtonDisplay] = useState(true);
     const { id } = useParams();
-    const urlParams = new URLSearchParams(window.location.search);
-    const foodListParam = urlParams.get('foodList');
-    const foodList = JSON.parse(decodeURIComponent(foodListParam));
+    
     return (
         <Box
             sx={{
@@ -30,7 +28,7 @@ const MenuPage = () => {
                     alt="Food Image"
                     src={foodImage} />
             </Box>
-                <CustomizedAccordions foodList={foodList} setButtonDisplay={setButtonDisplay} />
+                <CustomizedAccordions setButtonDisplay={setButtonDisplay} />
         </Box>
     )
 }
