@@ -1,7 +1,7 @@
 {
   "name": "customermenu",
   "version": "0.1.0",
-  "homepage": "https://kiranbabup.github.io/customer-menu/:id",
+  "homepage": "https://kiranbabup.github.io/customer-menu",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.3",
