@@ -5,10 +5,14 @@ import menuBG from "../assets/images/menubg.png";
 import foodImage from "../assets/images/foodImage.png";
 import { dataColor } from '../assets/data/constants';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const MenuPage = ({foodList, id}) => {
+const MenuPage = () => {
     const [isButtonDisplay, setButtonDisplay] = useState(true);
-
+    const { id } = useParams();
+    const urlParams = new URLSearchParams(window.location.search);
+    const foodListParam = urlParams.get('foodList');
+    const foodList = JSON.parse(decodeURIComponent(foodListParam));
     return (
         <Box
             sx={{
