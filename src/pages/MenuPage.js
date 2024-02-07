@@ -5,11 +5,13 @@ import menuBG from "../assets/images/menubg.png";
 import foodImage from "../assets/images/foodImage.png";
 import { dataColor } from '../assets/data/constants';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const MenuPage = () => {
     const [isButtonDisplay, setButtonDisplay] = useState(true);
-    const { id } = useParams();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search);
+    const id = searchParams.get('id');
     
     return (
         <Box
