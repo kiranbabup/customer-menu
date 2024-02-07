@@ -1,7 +1,12 @@
 import * as React from 'react';
-import { Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table } from '@mui/material';
+import { Paper, TableRow, TableHead, TableContainer, TableCell, TableBody, Table, Button, styled } from '@mui/material';
 
 const TAX_RATE = 0.07;
+
+const Cell = styled(TableCell)({
+    color:'white',
+    borderBottom: "1px solid #ffffff4f",
+});
 
 function ccyFormat(num) {
     return `${num.toFixed(2)}`;
@@ -28,45 +33,54 @@ export default function PriceTable({ addedItems }) {
     const invoiceTaxes = TAX_RATE * invoiceSubtotal;
     const invoiceTotal = invoiceTaxes + invoiceSubtotal;
     return (
-        <TableContainer component={Paper} sx={{mt:1, backgroundColor:"transparent", border:"1px solid #ffffffa6"}}>
+        <TableContainer component={Paper} sx={{mt:1, backgroundColor:"transparent", border:"1px solid #ffffff4f"}}>
             <Table sx={{ minWidth: "272px", }} aria-label="spanning table">
                 <TableHead>
                     <TableRow>
-                        <TableCell sx={{color:'white'}} align="center" colSpan={3}>
+                        <Cell align="center" colSpan={3}>
                             Details
-                        </TableCell>
-                        <TableCell sx={{color:'white'}} align="right">Price</TableCell>
+                        </Cell>
+                        <Cell align="right">Price</Cell>
                     </TableRow>
                     <TableRow>
-                        <TableCell sx={{color:'white'}} >Name</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">Qty.</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">Unit</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">Sum</TableCell>
+                        <Cell >Name</Cell>
+                        <Cell align="right">Qty.</Cell>
+                        <Cell align="right">Unit</Cell>
+                        <Cell align="right">Sum</Cell>
                     </TableRow>
                 </TableHead>
 
                 <TableBody>
                     {rows.map((row) => (
                         <TableRow key={row.desc}>
-                            <TableCell sx={{color:'white'}} >{row.desc}</TableCell>
-                            <TableCell sx={{color:'white'}} align="right">{row.qty}</TableCell>
-                            <TableCell sx={{color:'white'}} align="right">{row.unit}</TableCell>
-                            <TableCell sx={{color:'white'}} align="right">{ccyFormat(row.price)}</TableCell>
+                            <Cell >{row.desc}</Cell>
+                            <Cell align="right">{row.qty}</Cell>
+                            <Cell align="right">{row.unit}</Cell>
+                            <Cell align="right">{ccyFormat(row.price)}</Cell>
                         </TableRow>
                     ))}
                     <TableRow>
-                        <TableCell sx={{color:'white'}} rowSpan={3} />
-                        <TableCell sx={{color:'white'}} colSpan={2}>Subtotal</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">{ccyFormat(invoiceSubtotal)}</TableCell>
+                        <Cell rowSpan={3} />
+                        <Cell colSpan={2}>Subtotal</Cell>
+                        <Cell align="right">{ccyFormat(invoiceSubtotal)}</Cell>
                     </TableRow>
                     <TableRow>
-                        <TableCell sx={{color:'white'}} >Tax</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">{`${(TAX_RATE * 100).toFixed(0)} %`}</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">{ccyFormat(invoiceTaxes)}</TableCell>
+                        <Cell >Tax</Cell>
+                        <Cell align="right">{`${(TAX_RATE * 100).toFixed(0)} %`}</Cell>
+                        <Cell align="right">{ccyFormat(invoiceTaxes)}</Cell>
                     </TableRow>
                     <TableRow>
-                        <TableCell sx={{color:'white'}} colSpan={2}>Total</TableCell>
-                        <TableCell sx={{color:'white'}} align="right">{ccyFormat(invoiceTotal)}</TableCell>
+                        <Cell colSpan={2}>Total</Cell>
+                        <Cell align="right">{ccyFormat(invoiceTotal)}</Cell>
+                    </TableRow>
+                    <TableRow>
+                    <Cell colSpan={4} align="right">
+                        <Button 
+                        // disabled={isCallWaiterButton} 
+                        sx={{ fontWeight:"bold" }} variant="contained" 
+                        // onClick={()=>onCallWaiterHandle()}
+                        >Confirm & Call Waiter</Button>
+                    </Cell>
                     </TableRow>
                 </TableBody>
             </Table>

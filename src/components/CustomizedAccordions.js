@@ -3,14 +3,14 @@ import { Box, Typography, styled } from '@mui/material';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { foodList } from '../assets/data/constants';
+// import { foodList } from '../assets/data/constants';
 import PriceTable from './PriceTable';
 import MenuDetails from './MenuDetails';
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-    border: `1px solid #ffffffa6`,
+    border: `1px solid #ffffff4f`,
     borderRadius: "5px",
     marginBottom: "5px",
     '&::before': {
@@ -34,10 +34,14 @@ const AccordionSummary = styled((props) => (
     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
         transform: 'rotate(180deg)',
     },
-    borderBottom: expanded ? '1px dashed #ffffffa6' : 'none',
+    borderBottom: expanded ? '1px dashed #ffffff4f' : 'none',
 }));
 
-export default function CustomizedAccordions() {
+export default function CustomizedAccordions({setButtonDisplay}) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const foodListParam = urlParams.get('foodList');
+    const foodList = JSON.parse(decodeURIComponent(foodListParam));
+
     const [expanded, setExpanded] = React.useState('panel1');
     const [addedItems, setAddedItems] = React.useState([]);
 
@@ -55,8 +59,10 @@ export default function CustomizedAccordions() {
             const updatedItems = [...addedItems];
             updatedItems[existingItemIndex].quantity += 1;
             setAddedItems(updatedItems);
+            setButtonDisplay(false);
         } else {
             setAddedItems([...addedItems, { ...item, quantity: 1 }]);
+            setButtonDisplay(false);
         }
     }
 
@@ -69,13 +75,17 @@ export default function CustomizedAccordions() {
             } else {
                 updatedItems.splice(existingItemIndex, 1);
             }
-            setAddedItems(updatedItems);
+                setAddedItems(updatedItems);
         }
     };
-
+    React.useEffect(()=>{
+        if(addedItems.length === 0){
+            setButtonDisplay(true);
+        }
+    },[addedItems]);
 
     return (
-        <Box sx={{ padding: 3 }}>
+        <Box sx={{ paddingLeft: 3, paddingRight: 3, paddingBottom: 1  }}>
             {Array.from(new Set(foodList.map((item) => item.type))).map((type, index) => (
                 <Box key={type}>
                     <Typography sx={{ fontWeight: "bold", fontSize: "15px", pl: 2, pt: 1, textAlign: "center" }}>{type}</Typography>

@@ -55,21 +55,21 @@ export const foodList = [
         isveg: false,
         name: "Chicken Soup",
         price: 120,
-        type: "SOPUS",
+        type: "SOUPS",
         imgurl: nvsoup
     },
     {
         isveg: true,
         name: "Baby Corn Soup",
         price: 90,
-        type: "SOPUS",
+        type: "SOUPS",
         imgurl: vsoup
     },
     {
         isveg: true,
         name: "Paneer Soup",
         price: 100,
-        type: "SOPUS",
+        type: "SOUPS",
         imgurl: vsoup
     },
     {
@@ -90,14 +90,14 @@ export const foodList = [
         isveg: false,
         name: "Mutton Soup",
         price: 120,
-        type: "SOPUS",
+        type: "SOUPS",
         imgurl: nvsoup
     },
     {
         isveg: true,
         name: "Mixed Veg Soup",
         price: 100,
-        type: "SOPUS",
+        type: "SOUPS",
         imgurl: vsoup
     },
     {
