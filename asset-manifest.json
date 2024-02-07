@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/customer-menu/:id/static/css/main.efd05ccb.css",
-    "main.js": "/customer-menu/:id/static/js/main.ad39a7df.js",
-    "static/js/592.b9e760b6.chunk.js": "/customer-menu/:id/static/js/592.b9e760b6.chunk.js",
-    "static/media/menubg.png": "/customer-menu/:id/static/media/menubg.8282bfaf3f5c0e26d7d5.png",
-    "static/media/foodImage.png": "/customer-menu/:id/static/media/foodImage.43482952ffbc5616afd5.png",
-    "static/media/NVbiryani.jpg": "/customer-menu/:id/static/media/NVbiryani.d9622b8acb8dffad53c1.jpg",
-    "static/media/vegSoup.jpg": "/customer-menu/:id/static/media/vegSoup.52f2294dcbf5886ebbc0.jpg",
-    "static/media/nonvegStarter.jpg": "/customer-menu/:id/static/media/nonvegStarter.1b361af83d675d633900.jpg",
-    "static/media/vegBiryani.jpg": "/customer-menu/:id/static/media/vegBiryani.7b62c45b291a09066b95.jpg",
-    "static/media/nonvegSoup.jpg": "/customer-menu/:id/static/media/nonvegSoup.bb9afad1c307ec01773f.jpg",
-    "static/media/logo.png": "/customer-menu/:id/static/media/logo.f0e7fb693245ed669246.png",
-    "static/media/paneerTikka.jpg": "/customer-menu/:id/static/media/paneerTikka.9786c8046d2c26282e5a.jpg",
-    "index.html": "/customer-menu/:id/index.html",
-    "main.efd05ccb.css.map": "/customer-menu/:id/static/css/main.efd05ccb.css.map",
-    "main.ad39a7df.js.map": "/customer-menu/:id/static/js/main.ad39a7df.js.map",
-    "592.b9e760b6.chunk.js.map": "/customer-menu/:id/static/js/592.b9e760b6.chunk.js.map"
+    "main.css": "/customer-menu/static/css/main.efd05ccb.css",
+    "main.js": "/customer-menu/static/js/main.12b40c84.js",
+    "static/js/592.b9e760b6.chunk.js": "/customer-menu/static/js/592.b9e760b6.chunk.js",
+    "static/media/menubg.png": "/customer-menu/static/media/menubg.8282bfaf3f5c0e26d7d5.png",
+    "static/media/foodImage.png": "/customer-menu/static/media/foodImage.43482952ffbc5616afd5.png",
+    "static/media/NVbiryani.jpg": "/customer-menu/static/media/NVbiryani.d9622b8acb8dffad53c1.jpg",
+    "static/media/vegSoup.jpg": "/customer-menu/static/media/vegSoup.52f2294dcbf5886ebbc0.jpg",
+    "static/media/nonvegStarter.jpg": "/customer-menu/static/media/nonvegStarter.1b361af83d675d633900.jpg",
+    "static/media/vegBiryani.jpg": "/customer-menu/static/media/vegBiryani.7b62c45b291a09066b95.jpg",
+    "static/media/nonvegSoup.jpg": "/customer-menu/static/media/nonvegSoup.bb9afad1c307ec01773f.jpg",
+    "static/media/logo.png": "/customer-menu/static/media/logo.f0e7fb693245ed669246.png",
+    "static/media/paneerTikka.jpg": "/customer-menu/static/media/paneerTikka.9786c8046d2c26282e5a.jpg",
+    "index.html": "/customer-menu/index.html",
+    "main.efd05ccb.css.map": "/customer-menu/static/css/main.efd05ccb.css.map",
+    "main.12b40c84.js.map": "/customer-menu/static/js/main.12b40c84.js.map",
+    "592.b9e760b6.chunk.js.map": "/customer-menu/static/js/592.b9e760b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.efd05ccb.css",
-    "static/js/main.ad39a7df.js"
+    "static/js/main.12b40c84.js"
   ]
 }
