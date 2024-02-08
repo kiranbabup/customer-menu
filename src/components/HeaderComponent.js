@@ -2,7 +2,7 @@ import { Box, Button, Typography, styled } from "@mui/material";
 import RKLogo from "../assets/images/logo.png"
 import { useEffect, useState } from "react";
 
-const HeaderComponent = ({ isButtonDisplay, setButtonDisplay }) => {
+const HeaderComponent = () => {
     const HeaderBox = styled(Box)({
         width: "100%",
         height: "50px",
@@ -11,24 +11,20 @@ const HeaderComponent = ({ isButtonDisplay, setButtonDisplay }) => {
         alignItems: "center",
         borderBottom: "1px dashed gray"
     })
-
-    const [isCallWaiterButton, setIsCallWaiterButton] = useState(false)
+    
+    const [isButtonDisplay, setButtonDisplay] = useState(true);
     const [timer, setTimer] = useState(60);
     const [isActive, setIsActive] = useState(false);
 
     const onCallWaiterHandle = () => {
-        setIsCallWaiterButton(true);
         setButtonDisplay(false);
         setIsActive(true);
         setTimer(60);
         setTimeout(() => {
-            setIsCallWaiterButton(false);
             setButtonDisplay(true);
-            // }, 300000); //5min
         }, 60000); //1min
     }
 
-    // console.log(timer);
     useEffect(() => {
         let interval;
         if (timer > 0 && isActive) {
@@ -48,7 +44,8 @@ const HeaderComponent = ({ isButtonDisplay, setButtonDisplay }) => {
             {
                 isButtonDisplay ?
                     <Button sx={{ minWidth: "110px", height: "60%", marginRight: "4%", border: "2px solid", fontWeight: "bold" }} variant="outlined" onClick={() => onCallWaiterHandle()}>Call Waiter</Button>
-                    : <>{isCallWaiterButton ? <Typography sx={{ minWidth: "110px", marginRight: "4%", color: "yellow", textAlign:"center" }}>{timer}s</Typography> : <Box sx={{ minWidth: "110px", marginRight: "4%", }}></Box>}</>
+                    : 
+                    <Typography sx={{ minWidth: "110px", marginRight: "4%", color: "yellow", textAlign:"center" }}>{timer}s</Typography> 
             }
         </HeaderBox>
     )

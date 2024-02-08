@@ -4,10 +4,9 @@ import CustomizedAccordions from '../components/CustomizedAccordions';
 import menuBG from "../assets/images/menubg.png";
 import foodImage from "../assets/images/foodImage.png";
 import { dataColor } from '../assets/data/constants';
-import { useState } from 'react';
+import FooterComponent from '../components/FooterComponent';
 
 const MenuPage = () => {
-    const [isButtonDisplay, setButtonDisplay] = useState(true);
     
     return (
         <Box
@@ -19,14 +18,15 @@ const MenuPage = () => {
                 backgroundSize: 'cover',
             }}
         >
-            <HeaderComponent isButtonDisplay={isButtonDisplay} setButtonDisplay={setButtonDisplay}/>
+            <HeaderComponent />
             <Box sx={{ display: "flex", justifyContent: "center", mt: 1, width:"100%", height:"10rem"}}>
                 <Box component="img"
                     sx={{ borderRadius: "15px", width: "90%", height: "100%", }}
                     alt="Food Image"
                     src={foodImage} />
             </Box>
-                <CustomizedAccordions setButtonDisplay={setButtonDisplay} />
+            <CustomizedAccordions />
+            <FooterComponent />
         </Box>
     )
 }

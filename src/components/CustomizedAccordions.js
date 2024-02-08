@@ -37,7 +37,7 @@ const AccordionSummary = styled((props) => (
     borderBottom: expanded ? '1px dashed #ffffff4f' : 'none',
 }));
 
-export default function CustomizedAccordions({setButtonDisplay}) {
+export default function CustomizedAccordions() {
     const [expanded, setExpanded] = React.useState('panel1');
     const [addedItems, setAddedItems] = React.useState([]);
 
@@ -55,10 +55,8 @@ export default function CustomizedAccordions({setButtonDisplay}) {
             const updatedItems = [...addedItems];
             updatedItems[existingItemIndex].quantity += 1;
             setAddedItems(updatedItems);
-            setButtonDisplay(false);
         } else {
             setAddedItems([...addedItems, { ...item, quantity: 1 }]);
-            setButtonDisplay(false);
         }
     }
 
@@ -74,12 +72,7 @@ export default function CustomizedAccordions({setButtonDisplay}) {
                 setAddedItems(updatedItems);
         }
     };
-    React.useEffect(()=>{
-        if(addedItems.length === 0){
-            setButtonDisplay(true);
-        }
-    },[addedItems]);
-
+    
     return (
         <Box sx={{ paddingLeft: 3, paddingRight: 3, paddingBottom: 1  }}>
             {Array.from(new Set(foodList.map((item) => item.type))).map((type, index) => (
@@ -107,6 +100,7 @@ export default function CustomizedAccordions({setButtonDisplay}) {
                 addedItems.length > 0 &&
                 <PriceTable addedItems={addedItems} />
             }
+            {/* onAddClicked={onAddClicked} onRemoveClicked1={onRemoveClicked} */}
         </Box>
     );
 }
