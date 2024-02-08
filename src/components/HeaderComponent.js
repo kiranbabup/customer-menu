@@ -1,7 +1,8 @@
 import { Box, Button, Typography, styled } from "@mui/material";
 import RKLogo from "../assets/images/logo.png"
 import { useEffect, useState } from "react";
-const HeaderComponent = ({ isButtonDisplay, setButtonDisplay, id }) => {
+
+const HeaderComponent = ({ isButtonDisplay, setButtonDisplay }) => {
     const HeaderBox = styled(Box)({
         width: "100%",
         height: "50px",
@@ -10,6 +11,7 @@ const HeaderComponent = ({ isButtonDisplay, setButtonDisplay, id }) => {
         alignItems: "center",
         borderBottom: "1px dashed gray"
     })
+
     const [isCallWaiterButton, setIsCallWaiterButton] = useState(false)
     const [timer, setTimer] = useState(60);
     const [isActive, setIsActive] = useState(false);
@@ -42,7 +44,7 @@ const HeaderComponent = ({ isButtonDisplay, setButtonDisplay, id }) => {
     return (
         <HeaderBox>
             <Box component="img" sx={{ height: "80%", marginLeft: "2%" }} alt="Header Logo" src={RKLogo} />
-            <Typography sx={{ border: "1px dashed #ffffff4f", padding: "4px", borderRadius: "5px" }}>Table No. {id}</Typography>
+            <Typography sx={{ border: "1px dashed #ffffff4f", padding: "4px", borderRadius: "5px" }}>Table No. 1</Typography>
             {
                 isButtonDisplay ?
                     <Button sx={{ minWidth: "110px", height: "60%", marginRight: "4%", border: "2px solid", fontWeight: "bold" }} variant="outlined" onClick={() => onCallWaiterHandle()}>Call Waiter</Button>

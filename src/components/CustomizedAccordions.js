@@ -107,17 +107,6 @@ export default function CustomizedAccordions({setButtonDisplay}) {
                 addedItems.length > 0 &&
                 <PriceTable addedItems={addedItems} />
             }
-            {/* {
-                addedItems.map(item => {
-                    return (
-                        <Box sx={{ display: "flex", gap: "1rem", justifyContent: "end", alignItems: "center", mt: 1 }}>
-                            <Typography >{item.name}</Typography>
-                            <Typography>Quantity:{item.quantity}</Typography>
-                            <Typography>Price:{item.quantity * item.price} </Typography>
-                        </Box>
-                    )
-                })
-            } */}
         </Box>
     );
 }

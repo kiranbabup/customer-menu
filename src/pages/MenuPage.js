@@ -5,13 +5,9 @@ import menuBG from "../assets/images/menubg.png";
 import foodImage from "../assets/images/foodImage.png";
 import { dataColor } from '../assets/data/constants';
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 const MenuPage = () => {
     const [isButtonDisplay, setButtonDisplay] = useState(true);
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const id = searchParams.get('id');
     
     return (
         <Box
@@ -23,7 +19,7 @@ const MenuPage = () => {
                 backgroundSize: 'cover',
             }}
         >
-            <HeaderComponent id={id} isButtonDisplay={isButtonDisplay} setButtonDisplay={setButtonDisplay}/>
+            <HeaderComponent isButtonDisplay={isButtonDisplay} setButtonDisplay={setButtonDisplay}/>
             <Box sx={{ display: "flex", justifyContent: "center", mt: 1, width:"100%", height:"10rem"}}>
                 <Box component="img"
                     sx={{ borderRadius: "15px", width: "90%", height: "100%", }}
